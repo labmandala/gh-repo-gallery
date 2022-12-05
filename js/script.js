@@ -29,3 +29,12 @@ const displayUserInfo = function (data) {
     `;
   overview.append(div);
 };
+
+const gitRepos = async function () {
+// Sort repos by the most recently updated first & show up to 100 repos per page 
+  const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+  const repoData = await fetchRepos.json();
+  console.log(gitRepos);
+};
+
+gitRepos();
