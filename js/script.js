@@ -29,6 +29,7 @@ const displayUserInfo = function (data) {
       </div>
     `;
   overview.append(div);
+  gitRepos();
 };
 
 // Fetch repo data using endpoint & parameters according to API documentation
@@ -36,10 +37,9 @@ const gitRepos = async function () {
 // Parameters to sort repos by most recently updated first & show up to 100 repos per page 
   const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
   const repoData = await fetchRepos.json();
-  console.log(gitRepos);
+  //console.log(gitRepos);
+  displayRepos(repoData);
 };
-
-gitRepos();
 
 // Display repo’s info using properties from fetched data
 const displayRepos = function (repos) {
