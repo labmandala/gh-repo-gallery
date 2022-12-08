@@ -1,6 +1,8 @@
 const overview = document.querySelector(".overview"); // Div where profile info appears
 const username = "labmandala";
 const repoList = document.querySelector(".repo-list"); // Select ul to display repos list
+const allReposContainer = document.querySelector(".repos"); // Select section where all repo info appears
+const repoData = document.querySelector(".repo-data"); // Select section where individual repo data will appear
 
 // Fetch data from GitHub API, pull GH profile data
 const gitUserInfo = async function () {
@@ -50,3 +52,11 @@ const displayRepos = function (repos) {
     repoList.append(repoItem);
   }
 };
+
+// 
+repoList.addEventListener("click", function (e) {
+  if (e.target.matches("h3")) {
+    const repoName = e.target.innerText;
+    console.log(repoName);
+  }
+});
