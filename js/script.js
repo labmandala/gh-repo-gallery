@@ -53,10 +53,17 @@ const displayRepos = function (repos) {
   }
 };
 
-// 
+// Event listener for repo title to show the individual repo info
 repoList.addEventListener("click", function (e) {
   if (e.target.matches("h3")) {
     const repoName = e.target.innerText;
-    console.log(repoName);
+    getRepoInfo(repoName);
   }
 });
+
+// Get specific repo info
+const getRepoInfo = async function (repoName) {
+  const fetchInfo = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
+  const repoInfo = await fetchInfo.json();
+  console.log(repoInfo);
+};
