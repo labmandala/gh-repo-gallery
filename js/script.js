@@ -69,5 +69,12 @@ const getRepoInfo = async function (repoName) {
   // Fetch data from language_url property of repoInfo
   const fetchLanguages = await fetch(repoInfo.languages_url);
   const languageData = await fetchLanguages.json();
-  console.log(languageData);
+  console.log(languageData); // Return data on the languages used in the repo
+
+
+  // Make a list of languages
+  const languages = [];
+  for (const language in languageData) {
+   languages.push(language);
+  }
 };
