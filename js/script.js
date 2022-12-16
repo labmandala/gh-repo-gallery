@@ -3,6 +3,8 @@ const username = "labmandala";
 const repoList = document.querySelector(".repo-list"); // Select ul to display repos list
 const allReposContainer = document.querySelector(".repos"); // Select section where all repo info appears
 const repoData = document.querySelector(".repo-data"); // Select section where individual repo data will appear
+const viewReposButton = document.querySelector(".view-repos"); // Select the Back to Repo Gallery button
+const filterInput = document.querySelector(".filter-repos"); // Select the input with the “Search by name” placeholder
 
 // Fetch data from GitHub API, pull GH profile data
 const gitUserInfo = async function () {
