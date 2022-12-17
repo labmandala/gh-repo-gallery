@@ -82,8 +82,9 @@ const getRepoInfo = async function (repoName) {
   displayRepoInfo(repoInfo, languages); // Call fx to display repo info 
 };
 
-// Display specific repo info
+// Display specific, individual repo info
 const displayRepoInfo = function (repoInfo, languages) {
+  viewReposButton.classList.remove("hide"); // Displays Back to Repo Gallery button
   repoData.innerHTML = ""; // Empty HTML where individual repo data will appear
   repoData.classList.remove("hide");
   allReposContainer.classList.add("hide");
@@ -97,3 +98,10 @@ const displayRepoInfo = function (repoInfo, languages) {
   `;
   repoData.append(div);
 };
+
+// Event listener for the Back to Repo Gallery
+viewReposButton.addEventListener("click", function () {
+  allReposContainer.classList.remove("hide");
+  repoData.classList.add("hide");
+  viewReposButton.classList.add("hide");
+});
