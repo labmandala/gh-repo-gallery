@@ -112,4 +112,5 @@ filterInput.addEventListener("input", function (e) {
   //console.log(searchText);
   // Select all elements on page with repo class
   const repos = document.querySelectorAll(".repo");
+  const searchLowerText = searchText.toLowerCase();
 });
