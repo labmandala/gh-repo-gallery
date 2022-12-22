@@ -109,5 +109,7 @@ viewReposButton.addEventListener("click", function () {
 
 filterInput.addEventListener("input", function (e) {
   const searchText = e.target.value;
-  console.log(searchText);
+  //console.log(searchText);
+  // Select all elements on page with repo class
+  const repos = document.querySelectorAll(".repo");
 });
