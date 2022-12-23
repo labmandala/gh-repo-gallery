@@ -113,4 +113,9 @@ filterInput.addEventListener("input", function (e) {
   // Select all elements on page with repo class
   const repos = document.querySelectorAll(".repo");
   const searchLowerText = searchText.toLowerCase();
+
+  // Loop through each repo in element
+  for (const repo of repos) {
+
+  }
 });
