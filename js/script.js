@@ -115,7 +115,14 @@ filterInput.addEventListener("input", function (e) {
   const searchLowerText = searchText.toLowerCase();
 
   // Loop through each repo in element
+  // If the repo contains the text, show
+  // If it doesn’t contain the text, hide repo
   for (const repo of repos) {
-
+    const repoLowerText = repo.innerText.toLowerCase();
+    if (repoLowerText.includes(searchLowerText)) {
+      repo.classList.remove("hide");
+    } else {
+      repo.classList.add("hide");
+    }
   }
 });
